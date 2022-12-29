@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class foldersTXTparser {
@@ -19,13 +20,22 @@ public class foldersTXTparser {
      * @throws Exception
     */
     foldersTXTparser(String pathName) throws Exception{
+            //System.out.println("Reading file " + pathName);
             //Temporary variable to store folders as they are read one by one.
             Folder tempFolder;
             //A file is created from the file path given and a scanner opens and reads the file.
             this.file = new File(pathName);
-            this.scanner = new Scanner(this.file);
+            //System.out.println("Created file.");
+            try {
+                this.scanner = new Scanner(this.file);
+            } catch (FileNotFoundException e) {
+                System.out.println("File not found.");
+                System.exit(0);
+            }
+            //System.out.println("Created scanner.");
             //Reads every line of the file one by one.
             while (this.scanner.hasNextLine()) {
+                //System.out.println("Reading a line");
                 //Every line is turned into an integer that is used to create a file with that int size 
                 //which is insered into the priority and the serial Queue.
                 tempFolder = new Folder(Integer.parseInt(this.scanner.nextLine()));
