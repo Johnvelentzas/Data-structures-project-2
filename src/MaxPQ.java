@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /**
  * This class simply extends the HeapPriorityQueue class with intent to change some names.
  * @param <T>
@@ -8,8 +10,8 @@ public class MaxPQ<T> extends HeapPriorityQueue<T> implements MaxPQinterface<T>{
     /**
      * Simple constructor.
      */
-    public MaxPQ() {
-        super(new heapComperator<T>());
+    public MaxPQ(Comparator<T> comp) {
+        super(comp);
     }
 
     /**

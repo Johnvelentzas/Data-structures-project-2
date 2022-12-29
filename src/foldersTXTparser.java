@@ -7,7 +7,7 @@ public class foldersTXTparser {
     Scanner scanner;
     int numOfFolders;
     QueueImpl<Folder> foldersSerial = new QueueImpl<Folder>();
-    MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>();
+    MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>(new FolderComparator());
 
     /**
     *Basic constructor.
