@@ -9,7 +9,7 @@ public class MaxPQ<T> extends HeapPriorityQueue<T> implements MaxPQinterface<T>{
      * Simple constructor.
      */
     public MaxPQ() {
-        super();
+        super(new heapComperator<T>());
     }
 
     /**

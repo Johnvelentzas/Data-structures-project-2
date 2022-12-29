@@ -7,7 +7,7 @@ public class foldersTXTparser {
     Scanner scanner;
     int numOfFolders;
     QueueImpl<Folder> foldersSerial = new QueueImpl<Folder>();
-    MaxPQ foldersPriority = new MaxPQ();
+    MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>();
 
     /**
     *Basic constructor.
@@ -76,7 +76,7 @@ public class foldersTXTparser {
      * The folders are in order from largest size to smallest size.
      * The folders are objects shared with the serial Queue so any change applies to both.
      */
-    public MaxPQ getPriorityQueue(){
+    public MaxPQ<Folder> getPriorityQueue(){
         return this.foldersPriority;
     }
 }
