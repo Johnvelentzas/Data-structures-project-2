@@ -5,7 +5,8 @@ public class foldersTXTparser {
 
     File file;
     Scanner scanner;
-    int numOfFolders;
+    int numOfFolders = 0;
+    int totalSpaceUsed = 0;
     QueueImpl<Folder> foldersSerial = new QueueImpl<Folder>();
     MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>(new FolderComparator());
 
@@ -31,6 +32,7 @@ public class foldersTXTparser {
                 if (tempFolder.getSize() > 1000000 || tempFolder.getSize() < 0) {
                     throw new Exception("Invalid folder size");
                 }
+                this.totalSpaceUsed += tempFolder.getSize();
                 this.foldersPriority.insert(tempFolder);
                 this.foldersSerial.put(tempFolder);
             }
@@ -42,6 +44,13 @@ public class foldersTXTparser {
      */
     public int getNumOfFolders(){
         return this.numOfFolders;
+    }
+
+    /**
+     * @return Total space taken by folders.
+     */
+    public int getTotalSpaceUsed(){
+        return this.totalSpaceUsed;
     }
 
     /**
