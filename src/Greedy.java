@@ -26,12 +26,16 @@ public class Greedy{
         Folder tempFolder;
         Node<Disk> tempNode;
         boolean addedFolder;
+        /*
+         * A while loop repeats for every folder the scanner reads.
+         */
         while (!Folders.isEmpty()) {
             addedFolder = false;
             tempFolder = Folders.get();
             System.out.println("Storing " + tempFolder.toString());
             tempNode = Disks.head;
             while (tempNode != null) {
+                //checks every disk that is already used if it can store the incoming folder.
                 if(tempNode.getItem().addFolder(tempFolder)){
                     addedFolder = true;
                     break;
@@ -41,6 +45,7 @@ public class Greedy{
             if (addedFolder) {
                 continue;
             }
+            // If the incoming folder doesn't fit on any existing disk it creates a new one.
             Disk newDisk = new Disk();
             newDisk.addFolder(tempFolder);
             Disks.put(newDisk);
