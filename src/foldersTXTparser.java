@@ -47,6 +47,7 @@ public class foldersTXTparser {
                 this.foldersSerial.put(tempFolder);
             }
             this.numOfFolders = this.foldersSerial.size;
+            scanner.close();
     }
 
     /**
