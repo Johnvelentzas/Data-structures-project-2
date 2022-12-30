@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class foldersTXTparser {
 
-    File file;
-    Scanner scanner;
-    int numOfFolders = 0;
-    int totalSpaceUsed = 0;
-    QueueImpl<Folder> foldersSerial = new QueueImpl<Folder>();
-    MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>(new FolderComparator());
+    private File file;
+    private Scanner scanner;
+    private int numOfFolders = 0;
+    private int totalSpaceUsed = 0;
+    private QueueImpl<Folder> foldersSerial = new QueueImpl<Folder>();
+    private Folder[] folders;
 
     /**
      * Basic constructor.
@@ -43,10 +43,13 @@ public class foldersTXTparser {
                     throw new Exception("Invalid folder size");
                 }
                 this.totalSpaceUsed += tempFolder.getSize();
-                this.foldersPriority.insert(tempFolder);
                 this.foldersSerial.put(tempFolder);
             }
             this.numOfFolders = this.foldersSerial.size;
+            this.folders = new Folder[this.numOfFolders];
+            for (int i = 0; i < folders.length; i++) {
+                folders[i] = this.foldersSerial.get();
+            }
             scanner.close();
     }
 
@@ -65,38 +68,11 @@ public class foldersTXTparser {
     }
 
     /**
-     * @return the next Folder from the Queue.
-     * The folders are returned in the order they were in the input.
-     * 
-     */
-    public Folder getNextFolderSerial(){
-        return this.foldersSerial.get();
-    }
-
-    /**
-     * @return the next Folder from the Priority Queue.
-     * The folders are returned in order from largest size to smallest size.
-     */
-    public Folder getNextFolderPriority(){
-        return this.foldersPriority.getMax();
-    }
-
-
-    /**
      * @return A serial Queue with the folders from the given file.
      * The folders are in the order they were in the input.
      * The folders are objects shared with the priority Queue so any change applies to both.
      */
-    public QueueImpl<Folder> getSerialQueue(){
-        return this.foldersSerial;
-    }
-
-    /**
-     * @return A Priority Queue with the folders from the given file.
-     * The folders are in order from largest size to smallest size.
-     * The folders are objects shared with the serial Queue so any change applies to both.
-     */
-    public MaxPQ<Folder> getPriorityQueue(){
-        return this.foldersPriority;
+    public Folder[] getSerialQueue(){
+        return this.folders;
     }
 }
