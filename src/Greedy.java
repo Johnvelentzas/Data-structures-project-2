@@ -1,5 +1,3 @@
-import java.util.Iterator;
-
 /**
  * This class contains an algorithm that places incoming folders into disks.
  * for every new folder if there's at least one disk with enough space to store it
