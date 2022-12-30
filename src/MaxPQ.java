@@ -29,6 +29,9 @@ public class MaxPQ<T> extends HeapPriorityQueue<T> implements MaxPQinterface<T>{
 
     public void printQueue(){
         for (T obj : heap) {
+            if (obj == null) {
+                continue;
+            }
             System.out.println(obj.toString() + "\n");
         }
     }
