@@ -36,10 +36,10 @@ public class Folder implements Comparable<Folder>{
 
 
     /**
-    *@param secondFolder is a folder to be compared to this.
-    *@return 1 if this folder size is more than the second folders size.
-    *@return -1 if it's less.
-    *@return 0 if they're equal.
+     * @param secondFolder is a folder to be compared to this.
+     * @return 1 if this folder size is more than the second folders size.
+     * -1 if it's less.
+     * 0 if they're equal.
     */
     @Override
     public int compareTo(Folder secondFolder) {
