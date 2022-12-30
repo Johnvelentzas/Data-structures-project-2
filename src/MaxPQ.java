@@ -27,12 +27,12 @@ public class MaxPQ<T> extends HeapPriorityQueue<T> implements MaxPQinterface<T>{
         return super.size;
     }
 
+    /**
+     * Prints the entire Queue removing all of its contents.
+     */
     public void printQueue(){
-        for (T obj : heap) {
-            if (obj == null) {
-                continue;
-            }
-            System.out.println(obj.toString() + "\n");
+        while (this.size > 0) {
+            System.out.println(this.getMax().toString());
         }
     }
 }
