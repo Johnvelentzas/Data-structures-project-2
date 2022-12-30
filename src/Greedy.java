@@ -7,7 +7,7 @@
 
 public class Greedy{
     public static void main(String[] args) {
-        //System.out.println("Starting greedy algorithm");
+        System.out.println("Starting greedy algorithm");
         /*
          * Creates a parser and extracts the data from the txt file.
          * If the parser can't extract the data it returns closing the main method;
@@ -19,7 +19,6 @@ public class Greedy{
             System.out.println("Couldn't read file.");
             return;
         }
-        //System.out.println("Read file.");
         QueueImpl<Folder> Folders = parserData.getSerialQueue();
         Greedy.GreedyAlgorithm(Folders);
     }

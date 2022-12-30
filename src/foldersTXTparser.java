@@ -12,15 +12,15 @@ public class foldersTXTparser {
     MaxPQ<Folder> foldersPriority = new MaxPQ<Folder>(new FolderComparator());
 
     /**
-    *Basic constructor.
-    *@param pathName the string represantation of the path e.x (folder/text.txt).
-    *Creates a file from the path.
-    *Creates a scanner that reads the file.
-    *Creates a Queue and a priority Queue with the folders it read from the file given.
+     * Basic constructor.
+     * @param pathName the string represantation of the path e.x (folder/text.txt).
+     * Creates a file from the path.
+     * Creates a scanner that reads the file.
+     * Creates a Queue and a priority Queue with the folders it read from the file given.
      * @throws Exception
-    */
+     */
     foldersTXTparser(String pathName) throws Exception{
-            //System.out.println("Reading file " + pathName);
+            System.out.println("Reading file " + pathName);
             //Temporary variable to store folders as they are read one by one.
             Folder tempFolder;
             //A file is created from the file path given and a scanner opens and reads the file.
