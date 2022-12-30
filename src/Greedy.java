@@ -29,6 +29,7 @@ public class Greedy{
         int totalFolders = Folders.size();
         Folder tempFolder;
         int totalSpaceUsed = 0;
+        Disks.add(new Disk());
         /*
          * A while loop repeats for every folder the scanner reads.
          */
