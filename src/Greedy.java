@@ -50,7 +50,7 @@ public class Greedy{
             newDisk.addFolder(tempFolder);
             Disks.put(newDisk);
         }
-        System.out.println("The algorithm used " + Disks.size() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + parserData.getTotalSpaceUsed());
+        System.out.println("The algorithm used " + Disks.size() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + (float)parserData.getTotalSpaceUsed() / 1000000 + " ΤΒ.");
         if (totalFolders < 100) {
             Disks.printQueue(System.out);
         }
