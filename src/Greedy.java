@@ -28,8 +28,6 @@ public class Greedy{
         MaxPQ<Disk> Disks = new MaxPQ<Disk>(new DiskComparator());
         int totalFolders = Folders.size();
         Folder tempFolder;
-        Node<Disk> tempNode;
-        boolean addedFolder;
         int totalSpaceUsed = 0;
         /*
          * A while loop repeats for every folder the scanner reads.
