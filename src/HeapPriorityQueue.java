@@ -10,9 +10,9 @@ public class HeapPriorityQueue<T> implements PriorityQueueInterface<T> {
      * swim, sing, swap, grow
      */
 
-    private T[] heap; // the heap to store data in
-    private int size; // current size of the queue
-    private Comparator<T> comparator; // the comparator to use between the objects
+    protected T[] heap; // the heap to store data in
+    protected int size; // current size of the queue
+    protected Comparator<T> comparator; // the comparator to use between the objects
 
     private static final int DEFAULT_CAPACITY = 4; // default capacity
     private static final int AUTOGROW_SIZE = 4; // default auto grow

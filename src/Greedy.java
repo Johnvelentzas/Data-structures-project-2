@@ -20,39 +20,37 @@ public class Greedy{
             return;
         }
         //System.out.println("Read file.");
-        QueueImpl<Disk> Disks = new QueueImpl<Disk>();
         QueueImpl<Folder> Folders = parserData.getSerialQueue();
+        Greedy.GreedyAlgorithm(Folders);
+    }
+
+    public static void GreedyAlgorithm(QueueImpl<Folder> Folders){
+        MaxPQ<Disk> Disks = new MaxPQ<Disk>(new DiskComparator());
         int totalFolders = Folders.size();
         Folder tempFolder;
         Node<Disk> tempNode;
         boolean addedFolder;
+        int totalSpaceUsed = 0;
         /*
          * A while loop repeats for every folder the scanner reads.
          */
         while (!Folders.isEmpty()) {
-            addedFolder = false;
             tempFolder = Folders.get();
+            totalSpaceUsed += tempFolder.getSize();
             System.out.println("Storing " + tempFolder.toString());
-            tempNode = Disks.head;
-            while (tempNode != null) {
-                //checks every disk that is already used if it can store the incoming folder.
-                if(tempNode.getItem().addFolder(tempFolder)){
-                    addedFolder = true;
-                    break;
-                }
-                tempNode = tempNode.getNext();
-            }
-            if (addedFolder) {
+            Disk maxDisk = Disks.getMax(); //Removes the Disk with the most available space from the heap.
+            if(maxDisk.addFolder(tempFolder)){  //If the incoming folder fits in the disk with the most available space it puts it there.
+                Disks.add(maxDisk); // It puts the disk it took out of the heap back into the heap.
                 continue;
             }
-            // If the incoming folder doesn't fit on any existing disk it creates a new one.
-            Disk newDisk = new Disk();
+            Disks.add(maxDisk); // It puts the disk it took out of the heap back into the heap.
+            Disk newDisk = new Disk(); // If the incoming folder doesn't fit in the disk with the most available space it puts it in a new disk.
             newDisk.addFolder(tempFolder);
-            Disks.put(newDisk);
+            Disks.add(newDisk);
         }
-        System.out.println("The algorithm used " + Disks.size() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + (float)parserData.getTotalSpaceUsed() / 1000000 + " ΤΒ.");
+        System.out.println("The algorithm used " + Disks.getSize() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + (float)totalSpaceUsed / 1000000 + " ΤΒ.");
         if (totalFolders < 100) {
-            Disks.printQueue(System.out);
+            Disks.printQueue();
         }
     }
 }

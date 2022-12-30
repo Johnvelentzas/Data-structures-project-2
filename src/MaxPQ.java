@@ -23,4 +23,13 @@ public class MaxPQ<T> extends HeapPriorityQueue<T> implements MaxPQinterface<T>{
         super.add(object);
     }
 
+    public int getSize(){
+        return super.size;
+    }
+
+    public void printQueue(){
+        for (T obj : heap) {
+            System.out.println(obj.toString() + "\n");
+        }
+    }
 }
