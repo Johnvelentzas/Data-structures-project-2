@@ -40,6 +40,7 @@ public class foldersTXTparser {
                 //which is insered into the priority and the serial Queue.
                 tempFolder = new Folder(Integer.parseInt(this.scanner.nextLine()));
                 if (tempFolder.getSize() > 1000000 || tempFolder.getSize() < 0) {
+                    scanner.close();
                     throw new Exception("Invalid folder size");
                 }
                 this.totalSpaceUsed += tempFolder.getSize();
