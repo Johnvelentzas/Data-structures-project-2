@@ -14,7 +14,7 @@ public class Greedy{
          */
         foldersTXTparser parserData;
         try {
-            parserData = new foldersTXTparser("data\\folders20000.txt");
+            parserData = new foldersTXTparser("data\\folders1000.txt");
         } catch (Exception e) {
             System.out.println("Couldn't read file.");
             return;

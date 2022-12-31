@@ -13,14 +13,8 @@ public class GreedyDecreasing{
             return;
         }
         Folder[] Folders = parserData.getSerialQueue(); //Extracts an array of folders from the txt file.
-        for (Folder folder : Folders) {
-            System.out.println(folder.toString());
-        }
         System.out.println("Sorting Folders.");
         Folders = Sort.sortIntoPriorityQueue(Folders); //Sorts the array from biggest to smallest folder.
-        for (Folder folder : Folders) {
-            System.out.println(folder.toString());
-        }
         Greedy.GreedyAlgorithm(Folders); //Runs the greedy algorithm.
     }
 }
