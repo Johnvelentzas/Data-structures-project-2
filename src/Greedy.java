@@ -14,7 +14,7 @@ public class Greedy{
          */
         foldersTXTparser parserData;
         try {
-            parserData = new foldersTXTparser("src\\folders.txt");
+            parserData = new foldersTXTparser("data\\folders20000.txt");
         } catch (Exception e) {
             System.out.println("Couldn't read file.");
             return;
@@ -33,7 +33,7 @@ public class Greedy{
          */
         for (Folder folder : Folders) {
             totalSpaceUsed += folder.getSize();
-            System.out.println("Storing " + folder.toString());
+            //System.out.println("Storing " + folder.toString());
             Disk maxDisk = Disks.getMax(); //Removes the Disk with the most available space from the heap.
             if(maxDisk.addFolder(folder)){  //If the incoming folder fits in the disk with the most available space it puts it there.
                 Disks.add(maxDisk); // It puts the disk it took out of the heap back into the heap.
