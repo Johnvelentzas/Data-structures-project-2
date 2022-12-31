@@ -12,8 +12,8 @@ public class GreedyDecreasing{
             System.out.println("Couldn't read file.");
             return;
         }
-        Folder[] Folders = parserData.getSerialQueue();
-        Folders = Sort.sortIntoPriorityQueue(Folders);
-        Greedy.GreedyAlgorithm(Folders);
+        Folder[] Folders = parserData.getSerialQueue(); //Extracts an array of folders from the txt file.
+        Folders = Sort.sortIntoPriorityQueue(Folders); //Sorts the array from biggest to smallest folder.
+        Greedy.GreedyAlgorithm(Folders); //Runs the greedy algorithm.
     }
 }
