@@ -14,7 +14,7 @@ public class FileCreator {
 
     protected static void createWriteTXTfilesMulti(String name, int folders, int files){
         for (int i = 0; i < files; i++) {
-            createWriteTXTfile(name + i + ".txt", folders);
+            createWriteTXTfile(name + "-" + i + ".txt", folders);
         }
     }
 
