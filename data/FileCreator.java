@@ -18,7 +18,7 @@ public class FileCreator {
      * Each line has a random number from {@code 0} not included to {@code 1000000} included.
      * The name of the files created is the name given as a prefix followed by a {@code "-"}
      * followed by the index of the file and {@code ".txt"} dot txt.
-     * E.X. if the name given is "test" the one of the output files might be named ("test-4.txt").
+     * E.X. if the name given is "test" the one of the output files could be named ("test-4.txt").
      * @implSpec The index of the file is determined by a for loop:
      * <pre>{@code         
      * for (int i = 0; i < files; i++) {
