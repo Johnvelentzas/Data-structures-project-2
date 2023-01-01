@@ -37,6 +37,14 @@ public class Greedy{
      * <p>
      * This algorithm is <b>not</b> the most effective in storing Folders in multiple Disks.
      * </p>
+     * <p>
+     * After the completion of the algorithm it prints its results.
+     * It prints the number of disks it used to store all the folders, the number of folders it stored
+     * and the total space used in terabytes by all the folders on all the disks.
+     * The ideal would be that the number of disks would be the same as the total terabytes used rounded up.
+     * In some cases this can be achieved by this algorithm but it' very rare.
+     * The {@link GreedyDecreasing Greedy decreasing algorithm} has a higher eficiency in completing this task.
+     * </p>
      * @param Folders a list of all the incoming Folders the algorithm needs to store
      * @see MaxPQ
      * @see {@link Disk} the {@code Disk} class, {@link Folder} the {@code Folder} class.
