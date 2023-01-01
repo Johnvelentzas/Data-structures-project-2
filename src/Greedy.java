@@ -23,10 +23,52 @@ public class Greedy{
         Greedy.GreedyAlgorithm(Folders);
     }
 
+
+    /**
+     * The greedy Algorithm.
+     * <p>
+     * This algirithm takes an incoming list of {@code Folder} objects and puts them in {@code Disks}.
+     * It stores a priority heap {@link MaxPQ} with all the {@code Disks} it has already used.
+     * The heap always outputs the disk with the most available space left with the {@link MaxPQ#getMax()} function.
+     * At the beginning it creates an empty {@code Disk} that is stored in the PQ.
+     * Then for each {@code Folder} if it fits inside the {@code Disk} with the most available space it stores it there.
+     * Else it stores it in a new empty {@code Disk}
+     * </p>
+     * <p>
+     * This algorithm is <b>not</b> the most effective in storing Folders in multiple Disks.
+     * </p>
+     * @param Folders a list of all the incoming Folders the algorithm needs to store
+     * @see MaxPQ
+     * @see {@link Disk} the {@code Disk} class, {@link Folder} the {@code Folder} class.
+     * @see GreedyDecreasing
+     * @implSpec The simplyfied code is:
+     * <pre>{@code  
+     * MaxPQ<Disk> Disks = new MaxPQ<Disk>(new DiskComparator());
+     * // Adds to the heap an empty Disk
+     * Disks.add(new Disk());
+     * for (Folder folder : Folders) {
+     *      //Removes the Disk with the most available space from the heap.
+     *      Disk maxDisk = Disks.getMax();
+     *      //If the incoming folder fits in the disk with the most available space it puts it there.
+     *      if(maxDisk.addFolder(folder)){ 
+     *          // It puts the disk it took out of the heap back into the heap.
+     *          Disks.add(maxDisk);
+     *          continue;
+     *      }
+     *      // It puts the disk it took out of the heap back into the heap.
+     *      Disks.add(maxDisk);
+     *      // If the incoming folder doesn't fit in the disk with the most
+     *      // available space it puts it in a new disk.
+     *      Disk newDisk = new Disk();
+     *      newDisk.addFolder(folder);
+     *      Disks.add(newDisk);
+     * }</pre>
+     */
     public static void GreedyAlgorithm(Folder[] Folders){
         MaxPQ<Disk> Disks = new MaxPQ<Disk>(new DiskComparator());
         int totalFolders = Folders.length;
         int totalSpaceUsed = 0;
+        // Adds to the heap an empty Disk
         Disks.add(new Disk());
         /*
          * A for loop repeats for every folder the scanner reads.
@@ -34,13 +76,18 @@ public class Greedy{
         for (Folder folder : Folders) {
             totalSpaceUsed += folder.getSize();
             //System.out.println("Storing " + folder.toString());
-            Disk maxDisk = Disks.getMax(); //Removes the Disk with the most available space from the heap.
-            if(maxDisk.addFolder(folder)){  //If the incoming folder fits in the disk with the most available space it puts it there.
-                Disks.add(maxDisk); // It puts the disk it took out of the heap back into the heap.
+            //Removes the Disk with the most available space from the heap.
+            Disk maxDisk = Disks.getMax();
+            //If the incoming folder fits in the disk with the most available space it puts it there.
+            if(maxDisk.addFolder(folder)){ 
+                // It puts the disk it took out of the heap back into the heap.
+                Disks.add(maxDisk);
                 continue;
             }
-            Disks.add(maxDisk); // It puts the disk it took out of the heap back into the heap.
-            Disk newDisk = new Disk(); // If the incoming folder doesn't fit in the disk with the most available space it puts it in a new disk.
+            // It puts the disk it took out of the heap back into the heap.
+            Disks.add(maxDisk);
+            // If the incoming folder doesn't fit in the disk with the most available space it puts it in a new disk.
+            Disk newDisk = new Disk();
             newDisk.addFolder(folder);
             Disks.add(newDisk);
         }
