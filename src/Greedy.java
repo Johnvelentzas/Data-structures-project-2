@@ -29,7 +29,7 @@ public class Greedy{
      * <p>
      * This algirithm takes an incoming list of {@code Folder} objects and puts them in {@code Disks}.
      * It stores a priority heap {@link MaxPQ} with all the {@code Disks} it has already used.
-     * The heap always outputs the disk with the most available space left with the {@link MaxPQ#getMax()} function.
+     * The heap always outputs the disk with the most available space left with the {@link MaxPQ#getMax() getMax()} function.
      * At the beginning it creates an empty {@code Disk} that is stored in the PQ.
      * Then for each {@code Folder} if it fits inside the {@code Disk} with the most available space it stores it there.
      * Else it stores it in a new empty {@code Disk}
