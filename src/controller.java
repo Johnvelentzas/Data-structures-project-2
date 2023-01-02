@@ -5,11 +5,11 @@ public class controller {
     public static void main(String args[]){
         final int numberOfFiles = 20;
         // The file the results will be put in.
-        final String outputFile = "presentation\\Results-exponential.txt";
+        final String outputFile = "presentation\\Results-test.txt";
         // Where to find the input data files.
-        final String filePrefix = "data\\folders-exponential";
+        final String filePrefix = "data\\folders-test";
         //All folder numbers to test
-        final int[] numberOfFolders = {1, 5, 10, 50, 100, 500, 1000, 5000, 10000};
+        final int[] numberOfFolders = {};
         testData(numberOfFiles, outputFile, filePrefix, numberOfFolders);
     }
 
