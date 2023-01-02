@@ -9,18 +9,28 @@ public class controller {
         // Where to find the input data files.
         final String filePrefix = "data\\folders";
         FileCreator.createWriteTXTfilesMulti(filePrefix, 100, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 300, numberOfFiles);
         FileCreator.createWriteTXTfilesMulti(filePrefix, 500, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1000, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 2000, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 10000, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 700, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 900, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1100, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1300, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1500, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1700, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1900, numberOfFiles);
         FileCreator.createTXTfile(outputFile);
         try {
             FileWriter writer = new FileWriter(outputFile);
             compareAlgorithms(filePrefix, numberOfFiles, 100, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 300, writer);
             compareAlgorithms(filePrefix, numberOfFiles, 500, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1000, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 2000, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 10000, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 700, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 900, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1100, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1300, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1500, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1700, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1900, writer);
             writer.close();
         } catch (IOException e) {
             //If any error occurs
@@ -55,7 +65,7 @@ public class controller {
         float averageDisksGreedy = (float)disksUsedGreedy / numberOfFiles;
         float averageDisksGreedyDecreasing = (float)disksUsedDecreasing / numberOfFiles;
         float diference = averageDisksGreedy - averageDisksGreedyDecreasing;
-        System.out.println("The greedy algorithm use on average " + averageDisksGreedy + " disks for " + numberOfFolders + " folders while the greedy decreasing algorithm used " + averageDisksGreedyDecreasing + " disks. The greedy algorithm used on average " + diference + " more disks.");
-        writer.write("The greedy algorithm use on average " + averageDisksGreedy + " disks for " + numberOfFolders + " folders while the greedy decreasing algorithm used " + averageDisksGreedyDecreasing + " disks. The greedy algorithm used on average " + diference + " more disks.\n");
+        System.out.println("The greedy algorithm use on average " + averageDisksGreedy + " disks for " + numberOfFolders + " folders while the greedy decreasing algorithm used " + averageDisksGreedyDecreasing + " disks.\nThe greedy algorithm used on average " + diference + " more disks.");
+        writer.write("The greedy algorithm use on average " + averageDisksGreedy + " disks for " + numberOfFolders + " folders while the greedy decreasing algorithm used " + averageDisksGreedyDecreasing + " disks.\nThe greedy algorithm used on average " + diference + " more disks.\n");
     }
 }
