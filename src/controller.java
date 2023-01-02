@@ -3,13 +3,13 @@ import java.io.IOException;
 
 public class controller {
     public static void main(String args[]){
-        final int numberOfFiles = 30;
+        final int numberOfFiles = 20;
         // The file the results will be put in.
-        final String outputFile = "presentation\\Results.txt";
+        final String outputFile = "presentation\\Results-exponential.txt";
         // Where to find the input data files.
-        final String filePrefix = "data\\folders-serial-big";
+        final String filePrefix = "data\\folders-exponential";
         //All folder numbers to test
-        final int[] numberOfFolders = {100, 500, 1000, 1500, 2000, 2500, 3000};
+        final int[] numberOfFolders = {1, 5, 10, 50, 100, 500, 1000, 5000, 10000};
         testData(numberOfFiles, outputFile, filePrefix, numberOfFolders);
     }
 
