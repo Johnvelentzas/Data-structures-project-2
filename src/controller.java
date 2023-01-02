@@ -3,34 +3,26 @@ import java.io.IOException;
 
 public class controller {
     public static void main(String args[]){
-        final int numberOfFiles = 20;
+        final int numberOfFiles = 30;
         // The file the results will be put in.
         final String outputFile = "presentation\\Results.txt";
         // Where to find the input data files.
-        final String filePrefix = "data\\folders";
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 100, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 300, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 500, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 700, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 900, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1100, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1300, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1500, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1700, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 1900, numberOfFiles);
+        final String filePrefix = "data\\folders-serial-big";
+        //All folder numbers to test
+        final int[] numberOfFolders = {100, 500, 1000, 1500, 2000, 2500, 3000};
+        testData(numberOfFiles, outputFile, filePrefix, numberOfFolders);
+    }
+
+    public static void testData(int numberOfFiles, String outputFile, String filePrefix, int[] numberOfFolders){
+        for (int i : numberOfFolders) {
+        FileCreator.createWriteTXTfilesMulti(filePrefix, i, numberOfFiles);            
+        }
         FileCreator.createTXTfile(outputFile);
         try {
             FileWriter writer = new FileWriter(outputFile);
-            compareAlgorithms(filePrefix, numberOfFiles, 100, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 300, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 500, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 700, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 900, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1100, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1300, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1500, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1700, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 1900, writer);
+            for (int i : numberOfFolders) {
+            compareAlgorithms(filePrefix, numberOfFiles, i, writer);                
+            }
             writer.close();
         } catch (IOException e) {
             //If any error occurs

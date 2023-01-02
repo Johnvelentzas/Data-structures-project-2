@@ -1,20 +1,14 @@
-The greedy algorithm use on average 58.8 disks for 100 folders while the greedy decreasing algorithm used 52.6 disks.
-The greedy algorithm used on average 6.200001 more disks.
-The greedy algorithm use on average 177.7 disks for 300 folders while the greedy decreasing algorithm used 156.0 disks.
-The greedy algorithm used on average 21.699997 more disks.
-The greedy algorithm use on average 293.75 disks for 500 folders while the greedy decreasing algorithm used 256.95 disks.
-The greedy algorithm used on average 36.799988 more disks.
-The greedy algorithm use on average 411.2 disks for 700 folders while the greedy decreasing algorithm used 357.7 disks.
-The greedy algorithm used on average 53.5 more disks.
-The greedy algorithm use on average 528.45 disks for 900 folders while the greedy decreasing algorithm used 459.75 disks.
-The greedy algorithm used on average 68.70001 more disks.
-The greedy algorithm use on average 646.3 disks for 1100 folders while the greedy decreasing algorithm used 560.6 disks.
-The greedy algorithm used on average 85.70001 more disks.
-The greedy algorithm use on average 762.25 disks for 1300 folders while the greedy decreasing algorithm used 660.25 disks.
-The greedy algorithm used on average 102.0 more disks.
-The greedy algorithm use on average 881.3 disks for 1500 folders while the greedy decreasing algorithm used 764.95 disks.
-The greedy algorithm used on average 116.349976 more disks.
-The greedy algorithm use on average 995.55 disks for 1700 folders while the greedy decreasing algorithm used 861.3 disks.
-The greedy algorithm used on average 134.25 more disks.
-The greedy algorithm use on average 1105.3 disks for 1900 folders while the greedy decreasing algorithm used 952.8 disks.
-The greedy algorithm used on average 152.50006 more disks.
+The greedy algorithm use on average 60.0 disks for 100 folders while the greedy decreasing algorithm used 54.2 disks.
+The greedy algorithm used on average 5.799999 more disks.
+The greedy algorithm use on average 293.13333 disks for 500 folders while the greedy decreasing algorithm used 255.56667 disks.
+The greedy algorithm used on average 37.566666 more disks.
+The greedy algorithm use on average 586.4667 disks for 1000 folders while the greedy decreasing algorithm used 508.6 disks.
+The greedy algorithm used on average 77.86667 more disks.
+The greedy algorithm use on average 879.7 disks for 1500 folders while the greedy decreasing algorithm used 761.8 disks.
+The greedy algorithm used on average 117.900024 more disks.
+The greedy algorithm use on average 1178.2 disks for 2000 folders while the greedy decreasing algorithm used 1019.63336 disks.
+The greedy algorithm used on average 158.56659 more disks.
+The greedy algorithm use on average 1462.2667 disks for 2500 folders while the greedy decreasing algorithm used 1261.3667 disks.
+The greedy algorithm used on average 200.90002 more disks.
+The greedy algorithm use on average 1756.4 disks for 3000 folders while the greedy decreasing algorithm used 1514.5667 disks.
+The greedy algorithm used on average 241.83337 more disks.
