@@ -7,17 +7,21 @@
 
 public class Greedy{
     public static void main(String[] args) {
-        System.out.println("Starting greedy algorithm");
         runGreedyAlgorithmOnFile(args[0], true);
     }
 
     public static int runGreedyAlgorithmOnFile(String pathname, boolean printResults){
+        System.out.println("Running greedy algorithm on file " + pathname);
+        long time0 = System.currentTimeMillis();
         /*
          * Creates a parser and extracts the data from the txt file.
          */
         foldersTXTparser parserData = new foldersTXTparser(pathname);
         Folder[] Folders = parserData.getSerialQueue();
-        return Greedy.GreedyAlgorithm(Folders, printResults);
+        int greedyResult  = Greedy.GreedyAlgorithm(Folders, printResults);
+        long time1 = System.currentTimeMillis();
+        System.out.println("Greedy algorithm took " + (time1 - time0) + " miliseconds.");
+        return greedyResult;
     }
 
 
