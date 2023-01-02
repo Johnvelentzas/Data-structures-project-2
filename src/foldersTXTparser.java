@@ -19,8 +19,8 @@ public class foldersTXTparser {
      * Creates a Queue and a priority Queue with the folders it read from the file given.
      * @throws Exception
      */
-    foldersTXTparser(String pathName) throws Exception{
-            System.out.println("Reading file " + pathName);
+    foldersTXTparser(String pathName){
+            //System.out.println("Reading file " + pathName);
             //Temporary variable to store folders as they are read one by one.
             Folder tempFolder;
             //A file is created from the file path given and a scanner opens and reads the file.
@@ -41,7 +41,8 @@ public class foldersTXTparser {
                 tempFolder = new Folder(Integer.parseInt(this.scanner.nextLine()));
                 if (tempFolder.getSize() > 1000000 || tempFolder.getSize() < 0) {
                     scanner.close();
-                    throw new Exception("Invalid folder size");
+                    System.out.println("Invalid input data.");
+                    System.exit(0);
                 }
                 this.totalSpaceUsed += tempFolder.getSize();
                 this.foldersSerial.put(tempFolder);

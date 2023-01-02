@@ -1,5 +1,3 @@
-package data;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -32,7 +30,7 @@ public class FileCreator {
      * @param folders the number of lines to be written.
      * @param files the nimber of files to be created
      */
-    protected static void createWriteTXTfilesMulti(String name, int folders, int files){
+    public static void createWriteTXTfilesMulti(String name, int folders, int files){
         for (int i = 0; i < files; i++) {
             createWriteTXTfile(name + "-" + i + ".txt", folders);
         }
@@ -49,7 +47,7 @@ public class FileCreator {
      * @see for creating the {@code TXT} files {@link #createTXTfile(String)}
      * @see for writing on the {@code TXT} files {@link #writeTXTfile(String, int)}
      */
-    protected static void createWriteTXTfile(String name, int folders){
+    public static void createWriteTXTfile(String name, int folders){
         createTXTfile(name);
         writeTXTfile(name, folders);
     }
@@ -60,7 +58,7 @@ public class FileCreator {
      * If the file already exists or the name is invalid it does not create the file.
      * @param name the name to be given to the file.
      */
-    protected static void createTXTfile(String name){
+    public static void createTXTfile(String name){
         try {
             File file = new File(name);
             if (file.createNewFile()) {
@@ -82,7 +80,7 @@ public class FileCreator {
      * @param name the name of the TXT file to be written.
      * @param lines the number of lines to be written.
      */
-    protected static void writeTXTfile(String name, int lines){
+    public static void writeTXTfile(String name, int lines){
         try {
             FileWriter writer = new FileWriter(name);
             // Creates a random number generator.

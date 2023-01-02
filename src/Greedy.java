@@ -8,19 +8,16 @@
 public class Greedy{
     public static void main(String[] args) {
         System.out.println("Starting greedy algorithm");
+        runGreedyAlgorithmOnFile(args[0], true);
+    }
+
+    public static int runGreedyAlgorithmOnFile(String pathname, boolean printResults){
         /*
          * Creates a parser and extracts the data from the txt file.
-         * If the parser can't extract the data it returns closing the main method;
          */
-        foldersTXTparser parserData;
-        try {
-            parserData = new foldersTXTparser(args[0]);
-        } catch (Exception e) {
-            System.out.println("Couldn't read file.");
-            return;
-        }
+        foldersTXTparser parserData = new foldersTXTparser(pathname);
         Folder[] Folders = parserData.getSerialQueue();
-        Greedy.GreedyAlgorithm(Folders);
+        return Greedy.GreedyAlgorithm(Folders, printResults);
     }
 
 
@@ -46,6 +43,7 @@ public class Greedy{
      * The {@link GreedyDecreasing Greedy decreasing algorithm} has a higher eficiency in completing this task.
      * </p>
      * @param Folders a list of all the incoming Folders the algorithm needs to store
+     * @return the number of disks used to store the all the {@code Folders}
      * @see MaxPQ
      * @see {@link Disk} the {@code Disk} class, {@link Folder} the {@code Folder} class.
      * @see GreedyDecreasing
@@ -72,7 +70,7 @@ public class Greedy{
      *      Disks.add(newDisk);
      * }</pre>
      */
-    public static void GreedyAlgorithm(Folder[] Folders){
+    public static int GreedyAlgorithm(Folder[] Folders, boolean printResults){
         MaxPQ<Disk> Disks = new MaxPQ<Disk>(new DiskComparator());
         int totalFolders = Folders.length;
         int totalSpaceUsed = 0;
@@ -99,10 +97,13 @@ public class Greedy{
             newDisk.addFolder(folder);
             Disks.add(newDisk);
         }
-
-        System.out.println("The algorithm used " + Disks.getSize() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + (float)totalSpaceUsed / 1000000 + " ΤΒ.");
-        if (totalFolders < 100) {
-            Disks.printQueue();
+        if (printResults) {
+            System.out.println("The algorithm used " + Disks.getSize() + " disks to store " + totalFolders + " folders. \nTotal folder size is " + (float)totalSpaceUsed / 1000000 + " ΤΒ.");
+            if (totalFolders < 100) {
+                Disks.printQueue();
+            }  
         }
+        
+        return Disks.getSize();
     }
 }

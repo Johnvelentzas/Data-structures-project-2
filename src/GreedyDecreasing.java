@@ -1,20 +1,13 @@
 public class GreedyDecreasing{
     public static void main(String args[]){
         System.out.println("Starting greedy-decreasing algorithm");
-        /*
-         * Creates a parser and extracts the data from the txt file.
-         * If the parser can't extract the data it returns closing the main method;
-         */
-        foldersTXTparser parserData;
-        try {
-            parserData = new foldersTXTparser(args[0]);
-        } catch (Exception e) {
-            System.out.println("Couldn't read file.");
-            return;
-        }
-        Folder[] Folders = parserData.getSerialQueue(); //Extracts an array of folders from the txt file.
-        System.out.println("Sorting Folders.");
-        Folders = Sort.sortIntoPriorityQueue(Folders); //Sorts the array from biggest to smallest folder.
-        Greedy.GreedyAlgorithm(Folders); //Runs the greedy algorithm.
+        runGreedyDecreasingAlgorithmOnFile(args[0], true);
+    }
+
+    public static int runGreedyDecreasingAlgorithmOnFile(String pathname, boolean printResults){
+        foldersTXTparser parserData = new foldersTXTparser(pathname);
+        Folder[] Folders = parserData.getSerialQueue();
+        Folders = Sort.sortIntoPriorityQueue(Folders);
+        return Greedy.GreedyAlgorithm(Folders, printResults);
     }
 }
