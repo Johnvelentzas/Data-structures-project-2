@@ -13,7 +13,6 @@ public class controller {
         FileCreator.createWriteTXTfilesMulti(filePrefix, 1000, numberOfFiles);
         FileCreator.createWriteTXTfilesMulti(filePrefix, 2000, numberOfFiles);
         FileCreator.createWriteTXTfilesMulti(filePrefix, 10000, numberOfFiles);
-        FileCreator.createWriteTXTfilesMulti(filePrefix, 50000, numberOfFiles);
         FileCreator.createTXTfile(outputFile);
         try {
             FileWriter writer = new FileWriter(outputFile);
@@ -22,7 +21,6 @@ public class controller {
             compareAlgorithms(filePrefix, numberOfFiles, 1000, writer);
             compareAlgorithms(filePrefix, numberOfFiles, 2000, writer);
             compareAlgorithms(filePrefix, numberOfFiles, 10000, writer);
-            compareAlgorithms(filePrefix, numberOfFiles, 50000, writer);
             writer.close();
         } catch (IOException e) {
             //If any error occurs
