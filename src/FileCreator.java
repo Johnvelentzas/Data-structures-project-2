@@ -16,6 +16,7 @@ public class FileCreator {
      * Each line has a random number from {@code 0} not included to {@code 1000000} included.
      * The name of the files created is the name given as a prefix followed by a {@code "-"}
      * followed by the index of the file and {@code ".txt"} dot txt.
+     * If the files already exists they are modified with new data.
      * E.X. if the name given is "test" the one of the output files could be named ("test-4.txt").
      * @implSpec The index of the file is determined by a for loop:
      * <pre>{@code         
@@ -23,7 +24,7 @@ public class FileCreator {
      *      createWriteTXTfile(name + "-" + i + ".txt", folders);
      * }
      * }</pre>
-     * @see #createWriteTXTfile(String, int)
+     * @see {@link #createWriteTXTfile(String, int)}
      * @see for creating the {@code TXT} files {@link #createTXTfile(String)}
      * @see for writing on the {@code TXT} files {@link #writeTXTfile(String, int)}
      * @param name the name to be added as a prefix to the files created.
@@ -41,6 +42,7 @@ public class FileCreator {
      * Creates a TXT file with the given name.
      * If the file already exists or the name is invalid it does not create the file.
      * Writes on the TXT file given a curtain ammount of lines.
+     * If the file already exists it is modified with new data.
      * Each line it writes is a number from 0 not included to 1000000 included.
      * @param name the name to be given to the file.
      * @param folders the number of lines to be written.
@@ -76,6 +78,7 @@ public class FileCreator {
 
     /**
      * Writes on the TXT file given a curtain ammount of lines.
+     * If the file already exists it is modified with new data.
      * Each line it writes is a number from 0 not included to 1000000 included.
      * @param name the name of the TXT file to be written.
      * @param lines the number of lines to be written.
