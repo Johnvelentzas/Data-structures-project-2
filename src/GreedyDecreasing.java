@@ -11,7 +11,7 @@ public class GreedyDecreasing{
         Folders = Sort.sortIntoPriorityQueue(Folders);
         int greedyResult  = Greedy.GreedyAlgorithm(Folders, printResults);
         long time1 = System.currentTimeMillis();
-        System.out.println("Greedy algorithm took " + (time1 - time0) + " miliseconds.");
+        System.out.println("Greedy decreasing algorithm took " + (time1 - time0) + " miliseconds.");
         return greedyResult;
     }
 }
