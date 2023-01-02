@@ -3,18 +3,27 @@ import java.io.IOException;
 
 public class controller {
     public static void main(String args[]){
+        final int numberOfFiles = 20;
         // The file the results will be put in.
         final String outputFile = "presentation\\Results.txt";
         // Where to find the input data files.
         final String filePrefix = "data\\folders";
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 100, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 500, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 1000, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 2000, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 10000, numberOfFiles);
+        FileCreator.createWriteTXTfilesMulti(filePrefix, 50000, numberOfFiles);
         FileCreator.createTXTfile(outputFile);
-        FileWriter writer;
         try {
-            writer = new FileWriter(outputFile);
-            compareAlgorithms(filePrefix, 20, 100, writer);
-            compareAlgorithms(filePrefix, 20, 500, writer);
-            compareAlgorithms(filePrefix, 20, 1000, writer);
-            compareAlgorithms(filePrefix, 20, 2000, writer);
+            FileWriter writer = new FileWriter(outputFile);
+            compareAlgorithms(filePrefix, numberOfFiles, 100, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 500, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 1000, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 2000, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 10000, writer);
+            compareAlgorithms(filePrefix, numberOfFiles, 50000, writer);
+            writer.close();
         } catch (IOException e) {
             //If any error occurs
             System.out.println("An error occurred.");

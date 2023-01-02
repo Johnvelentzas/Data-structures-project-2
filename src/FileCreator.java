@@ -5,10 +5,10 @@ import java.util.Random;
 
 public class FileCreator {
     public static void main(String args[]){
-        createWriteTXTfilesMulti("data\\folders100", 100, 20);
-        createWriteTXTfilesMulti("data\\folders500", 500, 20);
-        createWriteTXTfilesMulti("data\\folders1000", 1000, 20);
-        createWriteTXTfilesMulti("data\\folders2000", 2000, 20);
+        createWriteTXTfilesMulti("data\\folders", 100, 25);
+        createWriteTXTfilesMulti("data\\folders", 500, 25);
+        createWriteTXTfilesMulti("data\\folders", 1000, 25);
+        createWriteTXTfilesMulti("data\\folders", 2000, 25);
     }
 
     /**
@@ -32,7 +32,7 @@ public class FileCreator {
      */
     public static void createWriteTXTfilesMulti(String name, int folders, int files){
         for (int i = 0; i < files; i++) {
-            createWriteTXTfile(name + "-" + i + ".txt", folders);
+            createWriteTXTfile(name + folders +"-" + i + ".txt", folders);
         }
     }
 
