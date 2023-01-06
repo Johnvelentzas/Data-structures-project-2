@@ -19,8 +19,8 @@ public class QuickSort<T extends Comparable<T>> {
         int y = b;
         T obj = list[b];
         for(;;){
-            while (list[++x].compareTo(obj) < 0){}
-            while (list[--y].compareTo(obj) > 0) {if (y == a) {break;}}
+            while (list[++x].compareTo(obj) > 0){}
+            while (list[--y].compareTo(obj) < 0) {if (y == a) {break;}}
             if(x >= y){
                 break;
             }
