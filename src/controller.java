@@ -3,13 +3,13 @@ import java.io.IOException;
 
 public class controller {
     public static void main(String args[]){
-        final int numberOfFiles = 10;
+        final int numberOfFiles = 20;
         // The file the results will be put in.
         final String outputFile = "presentation\\Results-test.txt";
         // Where to find the input data files.
         final String filePrefix = "data\\folders-test";
         //All folder numbers to test
-        final int[] numberOfFolders = {50000};
+        final int[] numberOfFolders = {20, 100, 500, 2000, 30000};
         testData(numberOfFiles, outputFile, filePrefix, numberOfFolders);
     }
 
