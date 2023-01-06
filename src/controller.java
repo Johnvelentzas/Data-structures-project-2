@@ -9,13 +9,13 @@ public class controller {
         // Where to find the input data files.
         final String filePrefix = "data\\folders-test";
         //All folder numbers to test
-        final int[] numberOfFolders = {};
+        final int[] numberOfFolders = {20, 50, 100};
         testData(numberOfFiles, outputFile, filePrefix, numberOfFolders);
     }
 
     public static void testData(int numberOfFiles, String outputFile, String filePrefix, int[] numberOfFolders){
         for (int i : numberOfFolders) {
-        FileCreator.createWriteTXTfilesMulti(filePrefix, i, numberOfFiles);            
+            FileCreator.createWriteTXTfilesMulti(filePrefix, i, numberOfFiles);            
         }
         FileCreator.createTXTfile(outputFile);
         try {
