@@ -8,7 +8,7 @@ public class GreedyDecreasing{
         long time0 = System.currentTimeMillis();
         foldersTXTparser parserData = new foldersTXTparser(pathname);
         Folder[] Folders = parserData.getSerialQueue();
-        Folders = Sort.sortIntoPriorityQueue(Folders);
+        SortFolders.sort(Folders);
         int greedyResult  = Greedy.GreedyAlgorithm(Folders, printResults);
         long time1 = System.currentTimeMillis();
         System.out.println("Greedy decreasing algorithm took " + (time1 - time0) + " miliseconds.");
