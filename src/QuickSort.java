@@ -2,7 +2,7 @@ public class QuickSort<T extends Comparable<T>> {
 
 
     public void sort(T[] list){
-        sortAlgorithm(list, 0, list.length);
+        sortAlgorithm(list, 0, list.length - 1);
     }
 
     private void sortAlgorithm(T[] list, int a, int b){

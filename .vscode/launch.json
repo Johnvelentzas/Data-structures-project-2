@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "Εργασία 2_54449b15"
+    },
+    {
+      "type": "java",
       "name": "Launch controller",
       "request": "launch",
       "mainClass": "controller",
