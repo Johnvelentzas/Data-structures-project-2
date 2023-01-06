@@ -30,6 +30,14 @@ public class QuickSort<T extends Comparable<T>> {
         return x;
     }
 
+
+    /**
+     * Swaps two objects of class {@code T} from the list {@code list}.
+     * The first object is at the index a {@code list[a]} and the second is at the index b {@code list[b]}
+     * @param list the list with all the class T objects.
+     * @param a the index of the first object to swap.
+     * @param b the index of the second object to swap.
+     */
     private void swap(T[] list, int a, int b){
         T temp = list[a];
         list[a] = list[b];
