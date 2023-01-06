@@ -13,8 +13,7 @@ The first algorithm puts each incoming folder into the disk with the most availa
 Greedy Decreasing algorithm.
 The secont algorithm sorts all the incoming disks from biggest to smallest then executes the first algorithm.
 
-The second algorithm is noticeably slower than the first especially when sorting a lot of folders.
-It can get up to 10 times slower than the first algorithm.
+The second algorithm is somewhat slower than the first especially when sorting a lot of folders.
 
 The second algorithm is up to 16% more effective at storing disks.
 Its effectiveness is a logarithmic curve begging from 0 with a noticeable limit at 16%.
