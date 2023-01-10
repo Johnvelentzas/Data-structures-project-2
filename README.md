@@ -15,6 +15,6 @@ The secont algorithm sorts all the incoming disks from biggest to smallest then 
 
 The second algorithm is somewhat slower than the first especially when sorting a lot of folders.
 
-The second algorithm is up to 16% more effective at storing disks.
-Its effectiveness is a logarithmic curve begging from 0 with a noticeable limit at 16%.
-This means that it can use up to 16% less disks at hight folder numbers.
+The second algorithm is up to 15% more effective at storing disks.
+Its effectiveness is a logarithmic curve begging from 0 with a noticeable limit at 15%
+This means that it can use up to 15% less disks at hight folder numbers.
